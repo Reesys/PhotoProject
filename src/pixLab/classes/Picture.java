@@ -373,6 +373,31 @@ public class Picture extends SimplePicture
 		}
 	}
 
+	public void hidePicture()
+	{
+
+	}
+
+	public void revealPicture()
+	{
+		Pixel[][] pixels = this.getPixels2D();
+
+		for(int row = 0; row < pixels.length; row++)
+		{
+			for(int col = 0; col < pixels[0].length; col++)
+			{
+				if(pixels[row][col].getRed() % 2 != 1)
+				{
+					pixels[row][col].setColor(Color.CYAN);
+				}
+				else if(pixels[row][col].getRed() % 2 == 1)
+				{
+					pixels[row][col].setColor(Color.MAGENTA);
+				}
+			}
+		}
+	}
+
 	/* Main method for testing - each class in Java can have a main
 	 * method
 	 */
