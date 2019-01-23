@@ -65,6 +65,19 @@ public class PictureTester
 		source.explore();
 	}
 
+	public static void testSteganography()
+	{
+		Picture source = new Picture("ada.jpg");
+
+		Picture message = new Picture("hide.jpg");
+		source.explore();
+		message.explore();
+		source.hidePicture(message);
+		source.explore();
+		source.revealPicture();
+		source.explore();
+	}
+
 	/** Main method for testing.  Every class can have a main
 	 * method in Java */
 	public static void main(String[] args)
