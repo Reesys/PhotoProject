@@ -175,8 +175,7 @@ public class Picture extends SimplePicture
 	 * @param startRow the start row to copy to
 	 * @param startCol the start col to copy to
 	 */
-	public void copy(Picture fromPic,
-			int startRow, int startCol)
+	public void copy(Picture fromPic, int startRow, int startCol)
 	{
 		Pixel fromPixel = null;
 		Pixel toPixel = null;
@@ -202,8 +201,8 @@ public class Picture extends SimplePicture
 	/** Method to create a collage of several pictures */
 	public void createCollage()
 	{
-		Picture flower1 = new Picture("seagull.jpg");
-		Picture flower2 = new Picture("seagull.jpg");
+		Picture flower1 = new Picture("alfisbest.jpg");
+		Picture flower2 = new Picture("alfisbest.jpg");
 		this.copy(flower1,0,0);
 		this.copy(flower2,100,0);
 		this.copy(flower1,200,0);
@@ -213,7 +212,7 @@ public class Picture extends SimplePicture
 		this.copy(flower1,400,0);
 		this.copy(flower2,500,0);
 		this.mirrorVertical();
-		this.write("seagull.jpg");
+		this.write("alfisbest.jpg");
 	}
 
 
@@ -318,6 +317,8 @@ public class Picture extends SimplePicture
 		randomColor();
 		shiftLeftRight(239);
 		shiftUpDown(246);
+		mirrorVertical();
+		mirrorHorizontal();
 	}
 
 	public void shiftLeftRight(int amount)
@@ -377,7 +378,7 @@ public class Picture extends SimplePicture
 	 */
 	public static void main(String[] args)
 	{
-		Picture beach = new Picture("skeletondrunk.jpg");
+		Picture beach = new Picture("alfisbest.jpg");
 		beach.explore();
 		beach.zeroBlue();
 		beach.explore();
